@@ -4,6 +4,7 @@ function LandingPage() {
     return (
         <div>
             LandingPage
+            checkout
         </div>
     )
 }
