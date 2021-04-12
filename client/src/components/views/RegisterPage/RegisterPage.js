@@ -27,25 +27,27 @@ function RegisterPage(props) {
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
+
+        if(Password !== ConfirmPassword) {
+            return alert('비밀번호와 비밀번호 확인은 같아야 합니다.');
+        }
+        let body = {
+            email: Email,
+            password: Password,
+            name: Name
+        }
+    
+        dispatch(registerUser(body))
+            .then(response => {
+                if(response.payload.success) {
+                    props.history.push("/login");
+                } else {
+                    alert("failed to sign up");
+                }
+            })
     }
 
-    if(Password !== ConfirmPassword) {
-        return alert('비밀번호와 비밀번호 확인은 같아야 합니다.');
-    }
-    let body = {
-        email: Email,
-        password: Password,
-        name: Name
-    }
-
-    dispatch(registerUser(body))
-        .then(response => {
-            if(response.payload.success) {
-                props.history.push("/login");
-            } else {
-                alert("failed to sign up");
-            }
-        })
+    
 
     // push 테스트
     return (

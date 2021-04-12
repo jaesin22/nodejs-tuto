@@ -18,21 +18,23 @@ function LoginPage(props) {
     }
     const onSubmitHandler = (event) => {
         event.preventDefault();
+
+        let body = {
+            email: Email,
+            password: Password
+        }
+    
+        dispatch(loginUser(body))
+            .then(response => {
+                if(response.payload.loginSuccess) {
+                    props.history.push('/')
+                } else {
+                   alert('Error')
+                }
+            })
     }
 
-    let body = {
-        email: Email,
-        password: Password
-    }
 
-    dispatch(loginUser(body))
-        .then(response => {
-            if(response.payload.loginSuccess) {
-                props.history.push('/')
-            } else {
-               // alert('Error')
-            }
-        })
 
     
     return (
@@ -53,8 +55,6 @@ function LoginPage(props) {
             <button type="submit">
                 Login
             </button>
-
-
             </form>
         </div>
     )
