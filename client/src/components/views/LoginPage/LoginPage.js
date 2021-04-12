@@ -1,4 +1,3 @@
-import Axios from 'axios'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { loginUser } from '../../../_actions/user_action'
@@ -31,7 +30,7 @@ function LoginPage(props) {
             if(response.payload.loginSuccess) {
                 props.history.push('/')
             } else {
-                alert('Error')
+               // alert('Error')
             }
         })
 
