@@ -1,5 +1,4 @@
 import axios from 'axios'
-import auth from '../hoc/auth';
 import {
     LOGIN_USER,
     REGISTER_USER,
