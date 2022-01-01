@@ -1,0 +1,48 @@
+@font-face {
+    src: url("./font/Maplestory Bold.ttf");
+    font-family: "jua";
+} 
+h1 {
+    font-family: "jua";
+    color:white;
+}
+
+h2 {
+    font-family: "jua";
+    color:white;
+}
+
+h3 {
+    font-family: "jua";
+    color:white;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+}
+
+.question {
+    display:none;
+}
+
+.result {
+    display: none;
+}
+
+#img {
+    width:300px;
+    height: 300px;
+    margin: 0 auto;
+}
+body {
+    background-color: #5ADEFF;
+}
+.btn {
+    font-family: "jua";
+}
+
+#beach {
+    width:30%;
+    height:30%;
+}
